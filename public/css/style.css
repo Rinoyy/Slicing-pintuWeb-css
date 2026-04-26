@@ -1,269 +1,479 @@
+/* ===========================================
+   BASE
+   =========================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    padding: 0px !important;
-    margin: 0px !important;
-    background-image: radial-gradient(139.95% 140.22% at 93.16% 89.03%, rgb(0, 251, 117) 0%, rgb(9, 106, 246) 58.22%, rgb(16, 35, 95) 100%);
+    padding: 0 !important;
+    margin: 0 !important;
+    background-image: radial-gradient(
+        139.95% 140.22% at 93.16% 89.03%,
+        rgb(0, 251, 117)  0%,
+        rgb(9, 106, 246)  58.22%,
+        rgb(16, 35, 95)   100%
+    );
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
     overflow-x: hidden !important;
-    box-sizing: border-box;
-    min-height: 2000px;
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-html, body {
-    max-width: 100%;
-}
+html, body { max-width: 100%; }
 
-
-
-.content{
-    width: 1200px;
+/* ===========================================
+   LAYOUT
+   =========================================== */
+.content {
+    width: min(1200px, 100%);
     margin: auto;
+    padding: 0 16px;
 }
 
+.main-content {
+    width: min(1150px, 100%);
+    margin: auto;
+    padding: 0 16px;
+}
 
-.btn-button{
+/* ===========================================
+   NAVBAR
+   =========================================== */
+
+/* Max-width wrapper agar navbar tetap centered di layar lebar */
+.navbar-inner {
+    max-width: 1232px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Mobile collapse: solid background agar dropdown child tidak terpotong */
+@media (max-width: 991.98px) {
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        background: rgb(12, 38, 95);
+        border-radius: 16px;
+        padding: 12px 20px 20px;
+        margin-top: 8px;
+        /* Tidak pakai backdrop-filter: stacking context-nya ganggu posisi dropdown */
+        overflow: visible;
+    }
+}
+
+.btn-button {
     border-radius: 20px;
-    padding: 1px !important;
+    padding: 2px !important;
 }
-.btn-navbar.active {
-    background:rgb(255, 255, 255) !important;
-    color:rgb(10, 104, 244) !important;
-    padding: 5px;
-    font-size: 15px;
-    line-height: 20px;
+
+.btn-navbar {
+    font-size: 14px;
     font-weight: 600;
+    padding: 0.25rem 0.875rem;
+    border-radius: 100px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.btn-navbar.active {
+    background: #fff !important;
+    color: rgb(10, 104, 244) !important;
     border-radius: 100px;
     padding: 0.25rem 1rem;
-}
-
-.sponsor{
-    width: 100%;
-    margin: auto;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-    background-color: white;
-    height: 1000px;
-}
-.main-sponsor{
-    width: 100%;
-    margin: auto;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-    background-color: rgba(229,231,235,0.9);
-    height: 100px;
-}
-
-
-.main-content{
-    margin-top: 3.8%;
-    width: 1150px;
-    height: auto;
-    margin: auto;
-}
-
-/* .main-content img{
-    margin-top: 2%;
-} */
-
-
-.main-text h1{
-    font-size: 73px;
-    line-height: 84px;
-    margin-bottom: 0.5rem; 
-    color: white;
-}
-
-.text span{
-    font-size: 28px;
-}
-
-/* .row.mt-4 {
-    margin-top: 2rem;
-} */
-.content-1{
-    background-color: white;
-    width: 300px;
-    position: absolute;
-    margin-top: 3%;        
-}
-
-
-@media (max-width: 576px) {
-    .content {
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    .btn-navbar.active {
-        font-size: 12px;
-        padding: 0.25rem;
-        line-height: 16px;
-    }
-
-    .main-hero {
-        height: 400px;
-    }
-
-    .btn-button {
-        padding: 5px;
-    }
 }
 
 .hover-nav {
     position: relative;
     display: inline-block;
+    cursor: pointer;
+    transition: opacity 0.2s;
 }
 
 .hover-nav::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -4px;
     width: 100%;
-    height: 3px;
-    background-color: white;
+    height: 2px;
+    background: white;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease;
 }
 
-.hover-nav:hover::after {
-    transform: scaleX(1);
+.hover-nav:hover::after { transform: scaleX(1); }
+
+.download-app-btn {
+    border: 1.5px solid rgba(255,255,255,0.7) !important;
+    transition: background 0.2s, color 0.2s;
 }
 
-.main-h1 {
-    margin-top: 20% !important;
-}
-.content-element:hover {
-  background-color: rgba(59,130,246,0.2);
-  width: 95%;
-  margin: auto;
-  border-radius: 12px;
-  padding: 0;
+.download-app-btn:hover {
+    background: white !important;
 }
 
+.download-app-btn:hover span { color: #0a68f4 !important; }
 
-
-@media (max-width: 400px) {
-    .body{
-        max-width: 400px !important;
-    }
-    .super-container{
-        max-width: 375px !important;
-    }
-    .main-img img {
-        max-width: 30%;
-        /* margin: 0 auto; */
-        display: block;
-    }
-    .download-sekarang{
-        text-align: center;
-        width: 30% !important;
-        /* margin: auto; */
-    }
-
-    .jaulbeli {
-        width: 37% !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 12px !important;
-    }
-
-    .col-responsif{
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .text span{
-        font-size: 20px;
-    }
-
-    .main-text h1{
-        width: 20%;
-        font-size: 35px !important;
-        line-height: 40px !important;
-        margin-left: 7.5%;
-    }
-
-    .rating{
-        width: 30% !important;
-        margin-left: 1%;
-    }
-
-    .main-content{
-        margin-top: -75%; 
-    }
-
-    .hamburger{
-        width: 120%;
-        position: static;
-        background-color: white;
-        margin-left: -20%;
-    }
-    .hamburger .hover-nav, .download{
-        color: rgb(19, 18, 18);
-        border: 0;
-
-    }
+/* Chevron rotate saat menu bahasa terbuka */
+[aria-expanded="true"] .lang-chevron {
+    transform: rotate(180deg);
 }
 
+.chooise-flag {
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+    border: none !important;
+}
 
-.halo {
+/* ===========================================
+   HERO
+   =========================================== */
+.super-container.main-hero { min-height: 92vh; }
+
+.main-h1 { margin-top: 14% !important; }
+
+.main-text h1 {
+    font-size: 68px;
+    line-height: 78px;
+    color: white;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.text span {
+    font-size: 22px;
+    color: rgba(255,255,255,0.92);
+}
+
+.hero-download-btn {
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(229,231,235,0.28);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 10px 18px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.hero-phone {
+    filter: drop-shadow(0 24px 48px rgba(0,0,0,0.25));
+}
+
+/* ===========================================
+   SPONSOR / TRUST BAR
+   =========================================== */
+.sponsor {
+    width: 100%;
+    background: white;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.main-sponsor {
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    background: rgba(229,231,235,0.85);
+    padding: 28px 0;
+}
+
+/* ===========================================
+   FEATURE CARDS
+   =========================================== */
+.card-sponsor { padding: 40px 0 48px; }
+
+.feature-card {
+    border-radius: 20px !important;
+    overflow: hidden;
+    position: relative;
+    border: none !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.12) !important;
+}
+
+.arrow-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e0e0e0;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #bd2525;
+    font-size: 18px;
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
+.feature-card:hover .arrow-icon,
+.app-card:hover .arrow-icon {
+    background: #bd2525;
+    color: white;
+    transform: translate(2px, -2px);
+}
 
-
-
-
-.ticker-container {
+/* ===========================================
+   TICKER
+   =========================================== */
+.ticker-wrapper {
     width: 100%;
     overflow: hidden;
-    /* background-color: #000;  */
-    padding: 10px 0;
-    white-space: nowrap;
-    margin-top: 10% !important;
+    padding: 12px 0;
+    background: white;
+    border-top: 1px solid #eef0f2;
+    border-bottom: 1px solid #eef0f2;
+    margin-top: 48px;
+}
+
+.ticker-track {
+    display: inline-flex;
+    animation: ticker-scroll 60s linear infinite;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .ticker-item {
-    width: 200px;
-    display: inline-block;
-    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 130px;
+    white-space: nowrap;
+}
+
+.ticker-symbol { font-weight: 800; }
+
+.ticker-item.green {
+    background: rgb(235,246,238);
+    color: #1a7a3a;
+}
+
+.ticker-item.red {
+    background: rgb(255,240,238);
+    color: #c0392b;
+}
+
+/* ===========================================
+   CRYPTO ASSETS
+   =========================================== */
+.limatAset { padding: 80px 0 60px; }
+
+.lihat-semua-btn {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.lihat-semua-btn:hover {
+    background: #0a68f4 !important;
+    color: white !important;
+    border-color: #0a68f4 !important;
+}
+
+.crypto-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+}
+
+.crypto-scroll-container::-webkit-scrollbar { display: none; }
+
+.crypto-cards-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.crypto-card {
+    border-radius: 16px !important;
+    border: 1.5px solid #eef0f2 !important;
+    min-width: 160px;
+    flex: 1;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.crypto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+    border-color: #c0d4ff !important;
+}
+
+/* ===========================================
+   SATU APLIKASI
+   =========================================== */
+.satu-aplikasi { padding: 60px 0 80px; }
+
+.app-card {
+    border-radius: 20px !important;
+    overflow: hidden;
+    border: none !important;
+    position: relative;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.app-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 56px rgba(0,0,0,0.12) !important;
+}
+
+/* ===========================================
+   INVESTMENT CALCULATOR
+   =========================================== */
+.investasi-section {
+    background: white;
+    padding: 60px 0 80px;
+}
+
+.investasi-box {
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 44px;
+    background: #fafbff;
+}
+
+.range-label {
     font-size: 15px;
-    color: #fff;
-    /* background-color: rgb(255, 240, 238); */
-    font-weight: bold;
-    animation: ticker 2s linear infinite;
-    padding: 12px  20px;
-    text-align: center;
+    color: #555;
+    margin-bottom: 4px;
 }
 
-@keyframes ticker {
-    0% {
-        transform: translateX(2%);
+.range-value-display {
+    font-size: 52px;
+    font-weight: 800;
+    color: #0a68f4;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 85%;
+    height: 6px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    outline: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #0a68f4;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(10,104,244,0.35);
+    transition: transform 0.15s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+
+.btn-tahun {
+    padding: 10px 22px !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    border: 2px solid #ddd !important;
+    background: white !important;
+    color: #444 !important;
+    transition: all 0.2s !important;
+}
+
+.btn-tahun:hover {
+    border-color: #0a68f4 !important;
+    color: #0a68f4 !important;
+}
+
+.btn_investasi {
+    background: #0a68f4 !important;
+    border-color: #0a68f4 !important;
+    color: white !important;
+}
+
+.form-select {
+    font-weight: 700;
+    color: #0a68f4;
+    border: none !important;
+    border-bottom: 2.5px solid #0a68f4 !important;
+    border-radius: 0 !important;
+    padding-left: 0;
+}
+
+.form-select:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* ===========================================
+   DROPDOWN CONTENT HOVER
+   =========================================== */
+.content-element:hover {
+    background: rgba(59,130,246,0.08);
+    border-radius: 10px;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+@media (max-width: 1200px) {
+    .main-text h1 { font-size: 56px; line-height: 66px; }
+}
+
+@media (max-width: 992px) {
+    .main-text h1 { font-size: 44px; line-height: 54px; }
+    .main-h1 { margin-top: 8% !important; }
+}
+
+@media (max-width: 768px) {
+    .main-text h1 { font-size: 36px; line-height: 44px; letter-spacing: -0.5px; }
+    .text span { font-size: 18px; }
+    .range-value-display { font-size: 36px; }
+    .investasi-box { padding: 24px 16px; }
+    .limatAset { padding: 40px 0; }
+    .satu-aplikasi { padding: 40px 0 60px; }
+}
+
+@media (max-width: 576px) {
+    .main-h1 { margin-top: 10px !important; }
+    .sponsor { border-top-left-radius: 40px; border-top-right-radius: 40px; }
+    .main-sponsor { border-top-left-radius: 40px; border-top-right-radius: 40px; }
+    .hamburger {
+        background: white;
+        padding: 16px;
+        border-radius: 12px;
+        margin-top: 8px;
     }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.ticker-item:nth-child(odd) {
-    background-color: rgb(255, 240, 238);
-    color: black;
-}
-
-.ticker-item:nth-child(even) {
-    background-color: rgb(235, 246, 238);
-    color: black;
-
-}
-
-
-
-.btn_investasi{
-    background-color: blue !important;
+    .hamburger .hover-nav { color: #222 !important; }
+    .hamburger .download-app-btn { border-color: #ccc !important; }
+    .hamburger .download-app-btn span { color: #222 !important; }
 }
