@@ -1,56 +1,56 @@
 # Pintu Web — UI Slicing
 
-Proyek ini merupakan implementasi slicing antarmuka halaman utama dari aplikasi **Pintu**, sebuah platform jual beli aset kripto asal Indonesia. Proyek dikerjakan sebagai latihan pengembangan frontend dengan fokus pada layouting, komponen UI, dan responsivitas.
+A frontend slicing project replicating the landing page of **Pintu**, an Indonesian cryptocurrency trading platform. Built as a frontend development exercise with a focus on UI components, layout, and responsiveness.
 
 ![Demo](src/assets/demo.png)
 
 ---
 
-## Deskripsi Proyek
+## Overview
 
-Proyek ini mereplikasi tampilan landing page pintu.id secara visual, mulai dari navigasi, hero section, hingga bagian-bagian konten di bawahnya. Seluruh komponen dibangun menggunakan React dengan styling yang ditulis secara manual tanpa bergantung pada UI library besar.
+This project visually replicates the pintu.id landing page, covering everything from the navigation bar and hero section down to the content sections below. All components are built with React and styled manually without relying on any large UI library.
 
 ---
 
-## Teknologi yang Digunakan
+## Tech Stack
 
-| Teknologi | Keterangan |
+| Technology | Description |
 |---|---|
-| **React 18** | Library utama untuk membangun struktur komponen |
-| **Vite** | Build tool dan development server |
-| **Bootstrap 5** | Digunakan terbatas untuk sistem grid dan utility class |
-| **CSS Custom** | Styling utama ditulis manual di `public/css/style.css` |
+| **React 18** | Main library for building UI components |
+| **Vite** | Build tool and development server |
+| **Bootstrap 5** | Used minimally for the grid system and utility classes |
+| **Custom CSS** | Primary styling written manually in `public/css/style.css` |
 
 ---
 
-## Fitur
+## Features
 
-- Navbar responsif dengan dropdown pilihan bahasa dan menu mobile
-- Hero section dengan gambar perangkat yang rata bawah
-- Trust bar berisi logo lembaga regulasi (Kominfo, Kemendag, dll.)
-- Feature cards dengan efek hover
-- Ticker harga kripto dengan animasi scroll otomatis
-- Daftar 5 aset kripto teratas dalam tampilan kartu scroll horizontal
-- Section highlight fitur aplikasi Pintu
-- Kalkulator simulasi investasi dengan range slider interaktif
+- Responsive navbar with language dropdown and mobile menu
+- Hero section with phone mockup aligned to the bottom
+- Trust bar displaying regulatory institution logos (Kominfo, Kemendag, etc.)
+- Feature cards with hover effects
+- Auto-scrolling cryptocurrency price ticker
+- Top 5 crypto assets displayed in a horizontally scrollable card list
+- App feature highlight section
+- Interactive investment simulation calculator with range sliders
 
 ---
 
-## Instalasi dan Menjalankan Proyek
+## Getting Started
 
-Pastikan **Node.js** telah terpasang, kemudian jalankan perintah berikut:
+Make sure **Node.js** is installed, then run the following commands:
 
 ```bash
-# Install dependensi
+# Install dependencies
 npm install
 
-# Jalankan development server
+# Start the development server
 npm run dev
 ```
 
-Buka `http://localhost:5173` pada browser untuk melihat hasilnya.
+Open `http://localhost:5173` in your browser to view the result.
 
-Untuk membuat build production:
+To create a production build:
 
 ```bash
 npm run build
@@ -58,12 +58,12 @@ npm run build
 
 ---
 
-## Struktur Direktori
+## Project Structure
 
 ```
 src/
 ├── assets/
-│   └── demo.png          # Screenshot tampilan proyek
+│   └── demo.png          # Project preview screenshot
 ├── components/
 │   ├── Navbar.jsx
 │   ├── Hero.jsx
@@ -78,10 +78,10 @@ src/
 
 public/
 ├── css/
-│   └── style.css         # Seluruh styling custom
-└── img/                  # Aset gambar (logo, ikon, foto perangkat)
+│   └── style.css         # All custom styles
+└── img/                  # Image assets (logos, icons, device mockups)
 ```
 
 ---
 
-> Proyek ini dibuat semata-mata untuk keperluan pembelajaran dan latihan slicing antarmuka. Tidak memiliki afiliasi dengan Pintu.id.
+> This project was created solely for learning and UI slicing practice. It has no affiliation with Pintu.id.
