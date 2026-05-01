@@ -127,7 +127,27 @@ html, body { max-width: 100%; }
 /* ===========================================
    HERO
    =========================================== */
-.super-container.main-hero { min-height: 92vh; }
+.super-container.main-hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container .main-content .row {
+    flex: 1;
+}
 
 .main-h1 { margin-top: 14% !important; }
 

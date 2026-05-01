@@ -1,10 +1,10 @@
 export default function Hero() {
   return (
-    <div className="container">
-      <div className="main-content mx-auto">
-        <div className="row align-items-center">
+    <div className="container hero-container">
+      <div className="main-content mx-auto h-100">
+        <div className="row align-items-stretch h-100">
 
-          <div className="col-lg-6 pt-3">
+          <div className="col-lg-6 pt-3 align-self-center">
             <div className="main-text">
               <div className="row col-responsif">
 
@@ -42,7 +42,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="col-lg-6">
+          <div className="col-lg-6 d-flex align-items-end justify-content-center">
             <div className="main-img text-center">
               <img src="/img/mainPhone.png" alt="Pintu App" className="img-fluid hero-phone" />
             </div>
